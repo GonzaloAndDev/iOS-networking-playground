@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum gitHubUserMapper {
+enum GitHubUserMapper {
     static func map(_ dto: GitHubUserProfileDTO) -> GitHubUserProfile {
         let displayName = (dto.name?.isEmpty == false) ? dto.name! : dto.login
         let avatarURL = dto.avatar_url.flatMap(URL.init(string:))

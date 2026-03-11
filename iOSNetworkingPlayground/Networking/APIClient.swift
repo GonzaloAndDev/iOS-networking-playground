@@ -17,7 +17,7 @@ final class APIClient {
     
     func request<ResponseType: Decodable> (
         _ endpoint: Endpoint,
-        responsetype: ResponseType.Type) async throws -> ResponseType {
+        responseType: ResponseType.Type) async throws -> ResponseType {
             let request = try buildRequest(endpoint: endpoint)
             
             do {
