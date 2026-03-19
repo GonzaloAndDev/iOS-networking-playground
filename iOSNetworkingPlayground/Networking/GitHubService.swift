@@ -15,8 +15,8 @@ protocol GitHubServiceProtocol {
 final class GitHubService: GitHubServiceProtocol {
     private let apiClient: APIClient
     
-    init(apliClient: APIClient) {
-        self.apiClient  = apliClient
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
     }
     
     func fetchUserProfile(username: String) async throws ->GitHubUserProfileDTO {

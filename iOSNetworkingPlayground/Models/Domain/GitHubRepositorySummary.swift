@@ -14,8 +14,8 @@ struct GitHubRepositorySummary: Equatable, Identifiable {
     let language: String?
     let stars: Int
     let updatedAt: Date
-    
-    var updtedAtFormatted: String {
+
+    var updatedAtFormatted: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter.string(from: updatedAt)
