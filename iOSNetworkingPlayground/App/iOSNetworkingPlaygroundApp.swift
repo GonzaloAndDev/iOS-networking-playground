@@ -8,10 +8,20 @@
 import SwiftUI
 
 @main
-struct iOSNetworkingPlaygroundApp: App {
+struct NetworkingPlaygroundApp: App {
+    private let gitHubUserSearchViewModel: GitHubUserSearchViewModel
+
+    init() {
+        let urlSession = URLSession(configuration: .default)
+        let apiClient = APIClient(urlSession: urlSession)
+        let gitHubService = GitHubService(apiClient: apiClient)
+        let gitHubRepository = GitHubRepository(service: gitHubService)
+        self.gitHubUserSearchViewModel = GitHubUserSearchViewModel(repository: gitHubRepository)
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GitHubUserSearchView(viewModel: gitHubUserSearchViewModel)
         }
     }
 }
